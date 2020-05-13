@@ -34,11 +34,19 @@ These are the main concepts described in this image:
 
 # Implementation plan 
 
+## Phase 1
 - first route
 - domain data update
 - set of rules
 - rules parsing
 - navigate to the next route 
 - default route when rules parsing 
-- expose events
 - publish library to npm
+
+## Phase 2
+- add url guard
+- expose events
+- add error page in the example
+
+## Phase 3
+- create editor
