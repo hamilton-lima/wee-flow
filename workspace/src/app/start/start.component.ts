@@ -18,6 +18,6 @@ export class StartComponent implements OnInit {
   ngOnInit() {}
 
   done() {
-    this.message = this.flow.next();
+    this.flow.next();
   }
 }

@@ -1,12 +1,13 @@
 import { Injectable } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Injectable({
   providedIn: "root",
 })
 export class WeeFlowService {
-  constructor() {}
+  constructor(private router: Router) {}
 
   next() {
-    return "hello, I am wee-flow, how are you?";
+    this.router.navigate(["choose-product"]);
   }
 }
