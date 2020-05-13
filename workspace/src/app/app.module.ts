@@ -10,6 +10,7 @@ import { ChooseProductComponent } from './choose-product/choose-product.componen
 import { SizeDetailsComponent } from './size-details/size-details.component';
 import { PriceComponent } from './price/price.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { WeeFlowService } from 'projects/wee-flow/src/public-api';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     MaterialAllComponentsModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [WeeFlowService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

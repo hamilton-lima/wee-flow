@@ -11,6 +11,10 @@ export class LoremIpsumService {
     return this.lorem.generateSentences(1);
   }
 
+  paragraphs(): string {
+    return this.lorem.generateParagraphs(2);
+  }
+
   constructor() { 
     this.lorem = new LoremIpsum({
       sentencesPerParagraph: {

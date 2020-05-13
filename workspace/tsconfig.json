@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "wee-flow": [
+        "dist/wee-flow"
+      ],
+      "wee-flow/*": [
+        "dist/wee-flow/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

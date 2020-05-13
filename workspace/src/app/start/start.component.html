@@ -3,9 +3,10 @@
     Lets start
   </p>
   <label class="panel-block"> {{ sample }} </label>
+  <label *ngIf="message" class="panel-block"> {{ message }} </label>
   <div class="panel-block">
-    <button class="button is-link is-outlined is-fullwidth">
-      Reset all filters
+    <button (click)="done()" class="button is-link is-outlined is-fullwidth">
+      Keep going
     </button>
   </div>
 </nav>
