@@ -11,6 +11,7 @@ import { SizeDetailsComponent } from './size-details/size-details.component';
 import { PriceComponent } from './price/price.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { WeeFlowService } from 'projects/wee-flow/src/public-api';
+import { WeeFlowModule } from 'wee-flow';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,9 @@ import { WeeFlowService } from 'projects/wee-flow/src/public-api';
     BrowserModule,
     AppRoutingModule,
     MaterialAllComponentsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule, WeeFlowModule
   ],
-  providers: [WeeFlowService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

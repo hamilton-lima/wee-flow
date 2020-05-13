@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { WeeFlowService } from './wee-flow.service';
+import { CheckoutService } from './checkout.service';
 
-describe('WeeFlowService', () => {
+describe('CheckoutService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: WeeFlowService = TestBed.get(WeeFlowService);
+    const service: CheckoutService = TestBed.get(CheckoutService);
     expect(service).toBeTruthy();
   });
 });

@@ -1,12 +1,10 @@
-import { NgModule } from '@angular/core';
-import { WeeFlowComponent } from './wee-flow.component';
-
-
+import { NgModule } from "@angular/core";
+import { WeeFlowService } from "./wee-flow.service";
 
 @NgModule({
-  declarations: [WeeFlowComponent],
-  imports: [
-  ],
-  exports: [WeeFlowComponent]
+  declarations: [],
+  imports: [],
+  providers: [WeeFlowService],
+  exports: [],
 })
-export class WeeFlowModule { }
+export class WeeFlowModule {}

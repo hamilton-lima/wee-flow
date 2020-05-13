@@ -8,3 +8,4 @@
 ng build wee-flow --watch
 ```
 Then update files in the library and see the results in the test application
+Keep in mind that new methods are not auto detected.

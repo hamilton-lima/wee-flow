@@ -1,6 +1,12 @@
 # wee-flow
 Workflow management for angular applications
 
+## Install 
+
+```
+ npm install wee-flow ts-expression-evaluator
+```
+
 # Motivation
 
 When you start a new Single page application project everything is beatiful, you are in love with the framework, `ng generate` is you best friend, and so on.
@@ -23,6 +29,8 @@ These are the main concepts described in this image:
 - next route calculation
 
 ![screenshot](https://raw.githubusercontent.com/hamilton-lima/wee-flow/master/images/main-flow.png)
+
+
 
 # Implementation plan 
 
