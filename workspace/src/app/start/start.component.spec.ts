@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StartComponent } from './start.component';
+import { RouterModule } from '@angular/router';
+import { APP_BASE_HREF } from '@angular/common';
 
 describe('StartComponent', () => {
   let component: StartComponent;
@@ -8,6 +10,8 @@ describe('StartComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      providers: [{ provide: APP_BASE_HREF, useValue: "/" }],
+      imports: [RouterModule.forRoot([])],
       declarations: [ StartComponent ]
     })
     .compileComponents();
