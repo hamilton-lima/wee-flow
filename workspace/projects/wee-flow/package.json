@@ -1,6 +1,11 @@
 {
   "name": "wee-flow",
   "version": "0.0.1",
+  "scripts": {
+    "ng": "ng",
+    "test": "ng test wee-flow",
+    "lint": "ng lint wee-flow"
+  },
   "peerDependencies": {
     "@angular/common": "~10.0.0-next.7",
     "@angular/core": "~9.1.7",
@@ -9,6 +14,8 @@
   "devDependencies": {
     "@angular/common": "~10.0.0-next.7",
     "@angular/core": "~9.1.7",
+    "chromium": "^2.1.2",
+    "karma-chrome-launcher": "^3.1.0",
     "ts-expression-evaluator": "^1.3.14"
   }
 }
