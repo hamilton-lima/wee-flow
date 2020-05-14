@@ -2,16 +2,13 @@
   "name": "wee-flow",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "^8.1.3",
-    "@angular/core": "^8.1.3",
-    "ts-expression-evaluator": "^1.3.13"
+    "@angular/common": "~10.0.0-next.7",
+    "@angular/core": "~9.1.7",
+    "ts-expression-evaluator": "^1.3.14"
   },
   "devDependencies": {
-    "@angular/common": "^8.1.3",
-    "@angular/core": "^8.1.3",
-    "rxjs": "~6.4.0",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.9.1",
-    "ts-expression-evaluator": "^1.3.13"
+    "@angular/common": "~10.0.0-next.7",
+    "@angular/core": "~9.1.7",
+    "ts-expression-evaluator": "^1.3.14"
   }
 }
