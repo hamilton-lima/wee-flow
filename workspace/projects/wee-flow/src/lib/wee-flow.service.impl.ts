@@ -1,4 +1,4 @@
-import evaluate, { registerFunction } from "ts-expression-evaluator";
+import evaluate from "ts-expression-evaluator";
 import { WeeFlowconfig } from "./wee-flow.model";
 
 export interface INavigator {
@@ -16,6 +16,11 @@ export class WeeFlowServiceImpl {
 
   set(updatedData: any) {
     this.domainData = updatedData;
+  }
+
+  start(){
+    this.config.currentRoute = this.config.startRoute;
+    this.navigator.navigate(this.config.currentRoute);
   }
 
   next() {

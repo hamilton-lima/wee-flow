@@ -1,10 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import evaluate, { registerFunction } from "ts-expression-evaluator";
 import { WeeFlowconfig } from "./wee-flow.model";
 import { WeeFlowServiceImpl, INavigator } from "./wee-flow.service.impl";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class WeeFlowService implements INavigator {
   private implementation: WeeFlowServiceImpl;
 
@@ -14,6 +13,10 @@ export class WeeFlowService implements INavigator {
 
   set(updatedData: any) {
     this.implementation.set(updatedData);
+  }
+
+  start() {
+    this.implementation.start();
   }
 
   next() {
