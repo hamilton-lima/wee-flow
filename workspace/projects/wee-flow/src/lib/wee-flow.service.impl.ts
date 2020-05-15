@@ -1,5 +1,5 @@
 import evaluate from "ts-expression-evaluator";
-import { WeeFlowconfig } from "./wee-flow.model";
+import { WeeFlowConfig } from "./wee-flow.model";
 
 export interface INavigator {
   navigate(route: string);
@@ -7,7 +7,7 @@ export interface INavigator {
 
 export class WeeFlowServiceImpl {
   private domainData: any;
-  private config: WeeFlowconfig;
+  private config: WeeFlowConfig;
   private navigator: INavigator;
 
   constructor(navigator: INavigator) {
@@ -59,11 +59,11 @@ export class WeeFlowServiceImpl {
     return result.rules;
   }
 
-  setConfig(config: WeeFlowconfig) {
+  setConfig(config: WeeFlowConfig) {
     this.config = this.validate(config);
   }
 
-  validate(config: WeeFlowconfig) {
+  validate(config: WeeFlowConfig) {
     if (!config.currentRoute) {
       config.currentRoute = config.startRoute;
     }

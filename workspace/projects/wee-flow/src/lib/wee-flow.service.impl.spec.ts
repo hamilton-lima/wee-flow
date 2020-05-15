@@ -1,6 +1,6 @@
 import { TestBed } from "@angular/core/testing";
 import { INavigator, WeeFlowServiceImpl } from "./wee-flow.service.impl";
-import { WeeFlowconfig } from './wee-flow.model';
+import { WeeFlowConfig } from './wee-flow.model';
 
 class CustomRouter implements INavigator {
   lastRoute: string;
@@ -9,7 +9,7 @@ class CustomRouter implements INavigator {
   }
 }
 
-const mockFlowconfig: WeeFlowconfig = {
+const mockFlowconfig: WeeFlowConfig = {
   startRoute: "start",
   currentRoute: null,
   notFoundRoute: "notfound",

@@ -4,3 +4,4 @@
 
 export * from './lib/wee-flow.service';
 export * from './lib/wee-flow.module';
+export * from './lib/wee-flow.model';

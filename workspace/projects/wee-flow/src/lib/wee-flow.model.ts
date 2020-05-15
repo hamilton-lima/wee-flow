@@ -1,4 +1,4 @@
-export interface WeeFlowconfig {
+export interface WeeFlowConfig {
   startRoute: string;
   notFoundRoute: string;
   currentRoute: string;
