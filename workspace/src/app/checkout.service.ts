@@ -1,14 +1,14 @@
 import { Injectable } from "@angular/core";
 import { Product } from "./product-models";
 import { WeeFlowService } from "wee-flow";
-import { WeeFlowconfig } from "projects/wee-flow/src/lib/wee-flow.model";
+import { WeeFlowConfig } from "wee-flow";
 
 @Injectable({
   providedIn: "root",
 })
 export class CheckoutService {
 
-  readonly mockFlowconfig: WeeFlowconfig = {
+  readonly mockFlowconfig: WeeFlowConfig = {
     startRoute: "start",
     currentRoute: null,
     notFoundRoute: "notfound",
@@ -49,6 +49,7 @@ export class CheckoutService {
 
   setProduct(product: Product) {
     this.product = product;
+    this.flow.next();
   }
 
   getProduct(): Product {

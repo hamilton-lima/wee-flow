@@ -1,1 +1,25 @@
-<p>choose-product works!</p>
+<div class="tile is-ancestor">
+  <div *ngFor="let product of products" class="tile is-4 is-parent">
+    <div class="tile is-child box">
+      <div class="title">{{ product.name }}</div>
+      <div class="columns">
+        <div class="column">
+          <span *ngIf="product.price">${{ product.price }}</span>
+          <span *ngIf="!product.price">
+            FREE
+          </span>
+        </div>
+        <div class="column">
+          <div class="columns is-1">
+            <div *ngFor="let size of product.sizes" class="column">
+              <span class="tag is-info">{{ size }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button (click)="buy(product)" class="button is-primary">Buy</button>
+      </div>
+    </div>
+  </div>
+</div>
