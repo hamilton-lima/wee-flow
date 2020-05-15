@@ -8,7 +8,7 @@ export class ProductService {
   constructor() {}
   readonly mockProducts: Product[] = [
     { name: "Flying Pig", price: 10000, sizes: [] },
-    { name: "Something Special", price: 0, sizes: [] },
+    { name: "Something", price: 0, sizes: [] },
     { name: "Picle Rick", price: 0, sizes: ["Small", "Medium", "Large"] },
     { name: "Rubick cube", price: 34, sizes: ["Small", "Medium"] },
   ];
