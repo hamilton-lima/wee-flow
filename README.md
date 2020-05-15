@@ -30,16 +30,15 @@ These are the main concepts described in this image:
 
 ![screenshot](https://raw.githubusercontent.com/hamilton-lima/wee-flow/master/images/main-flow.png)
 
-
-
 # Implementation plan 
 
 ## Phase 1
-- first route
-- domain data update
-- set of rules
-- rules parsing
-- navigate to the next route 
+ok - first route
+ok - domain data update
+ok - set of rules
+ok - rules parsing
+ok - navigate to the next route 
+- save domain state to continue navigation
 - default route when rules parsing 
 - publish library to npm
 
