@@ -1,7 +1,7 @@
 import { TestBed } from "@angular/core/testing";
 
 import { CheckoutService } from "./checkout.service";
-import { WeeFlowService } from "wee-flow/wee-flow";
+import { WeeFlowService } from "wee-flow";
 import { Router, RouterModule } from "@angular/router";
 import { AppModule } from "./app.module";
 import { APP_BASE_HREF } from "@angular/common";

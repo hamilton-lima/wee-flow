@@ -43,7 +43,8 @@ export class CheckoutService {
   constructor(private flow: WeeFlowService) {}
 
   start() {
-    // this.flow.setConfig(this.mockFlowconfig);
+    this.flow.setConfig(this.mockFlowconfig);
+    this.flow.start();
   }
 
   setProduct(product: Product) {

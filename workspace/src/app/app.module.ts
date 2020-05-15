@@ -10,6 +10,7 @@ import { SizeDetailsComponent } from "./size-details/size-details.component";
 import { PriceComponent } from "./price/price.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { WeeFlowModule } from "wee-flow";
+import { EmptyComponent } from './empty/empty.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { WeeFlowModule } from "wee-flow";
     SizeDetailsComponent,
     PriceComponent,
     CheckoutComponent,
+    EmptyComponent,
   ],
   imports: [
     BrowserModule,
