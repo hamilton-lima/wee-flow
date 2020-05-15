@@ -7,7 +7,6 @@ import { WeeFlowConfig } from "wee-flow";
   providedIn: "root",
 })
 export class CheckoutService {
-
   readonly mockFlowconfig: WeeFlowConfig = {
     startRoute: "start",
     currentRoute: null,
@@ -47,8 +46,13 @@ export class CheckoutService {
     this.flow.start();
   }
 
+  next() {
+    this.flow.next();
+  }
+
   setProduct(product: Product) {
     this.product = product;
+    this.flow.set(product);
     this.flow.next();
   }
 

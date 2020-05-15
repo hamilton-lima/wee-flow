@@ -1,5 +1,5 @@
 <div class="tile is-ancestor">
-  <div *ngFor="let product of products" class="tile is-4 is-parent">
+  <div *ngFor="let product of products" class="tile is-3 is-parent">
     <div class="tile is-child box">
       <div class="title">{{ product.name }}</div>
       <div class="columns">
@@ -10,11 +10,7 @@
           </span>
         </div>
         <div class="column">
-          <div class="columns is-1">
-            <div *ngFor="let size of product.sizes" class="column">
-              <span class="tag is-info">{{ size }}</span>
-            </div>
-          </div>
+          <p *ngFor="let size of product.sizes"> {{ size }}</p>
         </div>
       </div>
       <div>

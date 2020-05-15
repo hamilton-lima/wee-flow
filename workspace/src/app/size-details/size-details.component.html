@@ -1,1 +1,16 @@
-<p>size-details works!</p>
+<nav class="panel">
+  <div class="panel-heading">
+    Sizes
+  </div>
+  <div>
+    <p *ngFor="let size of product.sizes"> {{ size }}</p>
+  </div>
+  <div class="panel-block">
+    <button
+      (click)="continue()"
+      class="button is-link is-outlined is-fullwidth"
+    >
+      Continue
+    </button>
+  </div>
+</nav>
