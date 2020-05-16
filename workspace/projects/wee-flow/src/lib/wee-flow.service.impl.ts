@@ -13,6 +13,7 @@ export interface INavigator {
 export class WeeFlowServiceImpl {
   private navigator: INavigator;
 
+  protected config: IWeeFlowConfig;
   protected state: IWeeflowState;
   protected persistence: IWeeFlowPersistence;
 
@@ -22,11 +23,15 @@ export class WeeFlowServiceImpl {
   }
 
   start(config: IWeeFlowConfig) {
-    config = this.validate(config);
-    this.state = <IWeeflowState>{ config: config, domainData: {} };
-    this.state.config.currentRoute = this.state.config.startRoute;
+    this.config = this.validate(config);
+    this.state = <IWeeflowState>{
+      name: this.config.name,
+      version: this.config.version,
+      currentRoute: this.config.startRoute,
+      domainData: {},
+    };
     this.persistence.write(this.state);
-    this.navigator.navigate(this.state.config.currentRoute);
+    this.navigator.navigate(this.state.currentRoute);
   }
 
   set(updatedData: any) {
@@ -48,16 +53,16 @@ export class WeeFlowServiceImpl {
       );
       return;
     }
-    
-    this.state.config.currentRoute = this.calculateNextRoute();
+
+    this.state.currentRoute = this.calculateNextRoute();
     this.persistence.write(this.state);
 
-    this.navigator.navigate(this.state.config.currentRoute);
+    this.navigator.navigate(this.state.currentRoute);
   }
 
   calculateNextRoute() {
-    let result = this.state.config.startRoute;
-    if (this.state.config.currentRoute) {
+    let result = this.config.startRoute;
+    if (this.state.currentRoute) {
       result = this.evaluateRules();
     }
 
@@ -65,7 +70,7 @@ export class WeeFlowServiceImpl {
   }
 
   evaluateRules() {
-    let result = this.state.config.notFoundRoute;
+    let result = this.config.notFoundRoute;
     const rules = this.currentRules();
 
     for (let rule of rules) {
@@ -80,16 +85,13 @@ export class WeeFlowServiceImpl {
 
   // TODO: support not found
   currentRules() {
-    const result = this.state.config.routes.find(
-      (route) => route.name === this.state.config.currentRoute
+    const result = this.config.routes.find(
+      (route) => route.name === this.state.currentRoute
     );
     return result.rules;
   }
 
   validate(config: IWeeFlowConfig) {
-    if (!config.currentRoute) {
-      config.currentRoute = config.startRoute;
-    }
     // TODO: sort rules by order
     return config;
   }

@@ -1,5 +1,5 @@
 import { INavigator, WeeFlowServiceImpl } from "./wee-flow.service.impl";
-import { mockFlowconfig } from "./mock";
+import { mockFlowconfig, goingNowhere } from "./mock";
 
 class CustomRouter implements INavigator {
   lastRoute: string;
@@ -48,6 +48,14 @@ describe("WeeFlowServiceImpl", () => {
 
     service.next();
     expect(router.lastRoute).toBe("checkout");
+  });
+
+  it("should go to notfound route if no condition rules is satisfied", () => {
+    const router = new CustomRouter();
+    const service = new WeeFlowServiceImpl(router);
+    service.start(goingNowhere);
+    service.next();
+    expect(router.lastRoute).toBe("notfound");
   });
 
   it("should persist when calling start()", () => {

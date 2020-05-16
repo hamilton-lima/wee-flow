@@ -3,7 +3,7 @@ import { IWeeFlowPersistence, IWeeflowState } from "./wee-flow.model";
 export class LocalStoragePersistence implements IWeeFlowPersistence {
   readonly PREFIX = "wee-flow-";
   write(state: IWeeflowState) {
-    const name = this.PREFIX + state.config.name;
+    const name = this.PREFIX + state.name;
     const data = JSON.stringify(state);
     localStorage.setItem(name, data);
   }

@@ -48,6 +48,7 @@ These are the main concepts described in this image:
 ## Phase 2
 | task | status |
 | --- | --- | 
+| Rules definition upgrade should reset saved state? |
 | Create editor | 
 | Validate set of rules | 
 

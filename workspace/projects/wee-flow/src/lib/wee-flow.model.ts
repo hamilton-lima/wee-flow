@@ -1,18 +1,22 @@
+import { Version } from '@angular/core';
+
 export interface IWeeFlowPersistence {
   write(state:IWeeflowState);
   read(name:string):IWeeflowState;
 }
 
 export interface IWeeflowState{
-  config: IWeeFlowConfig;
+  name: string;
+  version: string;
   domainData: any;
+  currentRoute: string;
 }
 
 export interface IWeeFlowConfig {
   name: string;
+  version: string;
   startRoute: string;
   notFoundRoute: string;
-  currentRoute: string;
   routes: IWeeFlowRoute[];
 }
 
