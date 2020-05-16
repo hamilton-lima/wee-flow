@@ -11,20 +11,16 @@ export class WeeFlowService implements INavigator {
     this.implementation = new WeeFlowServiceImpl(this);
   }
 
+  start(config: IWeeFlowConfig) {
+    this.implementation.start(config);
+  }
+
   set(updatedData: any) {
     this.implementation.set(updatedData);
   }
 
-  start() {
-    this.implementation.start();
-  }
-
   next() {
     this.implementation.next();
-  }
-
-  setConfig(config: IWeeFlowConfig) {
-    this.implementation.setConfig(config);
   }
 
   navigate(params: string) {
