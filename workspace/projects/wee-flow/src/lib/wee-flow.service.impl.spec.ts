@@ -1,5 +1,6 @@
 import { INavigator, WeeFlowServiceImpl } from "./wee-flow.service.impl";
 import { mockFlowconfig, goingNowhere } from "./mock";
+import { IWeeflowState } from "./wee-flow.model";
 
 class CustomRouter implements INavigator {
   lastRoute: string;
@@ -12,8 +13,13 @@ class WeeFlowServiceImplTest extends WeeFlowServiceImpl {
   getPersistence() {
     return this.persistence;
   }
+
   getState() {
     return this.state;
+  }
+
+  setState(state: IWeeflowState) {
+    this.state = state;
   }
 }
 
@@ -58,6 +64,33 @@ describe("WeeFlowServiceImpl", () => {
     expect(router.lastRoute).toBe("notfound");
   });
 
+  it("should restore workflow state when calling restore()", () => {
+    const router = new CustomRouter();
+    const service = new WeeFlowServiceImplTest(router);
+    service.start(mockFlowconfig);
+    service.next();
+    service.set({ price: 10, sizes: ["S", "M", "L"] });
+    service.next();
+    expect(router.lastRoute).toBe("price");
+
+    const currentState = service.getState();
+    
+    // currentRoute is price with the domainData defined above
+    // this will reset it
+    service.setState(<IWeeflowState>{
+      currentRoute: "foo",
+      domainData: {},
+      name: "bar",
+      version: "1",
+    });
+
+    // validate the update of the current state
+    expect(currentState).not.toEqual(service.getState());
+
+    service.restore(mockFlowconfig);
+    expect(currentState).toEqual(service.getState());
+  });
+
   it("should persist when calling start()", () => {
     const router = new CustomRouter();
     const service = new WeeFlowServiceImplTest(router);
@@ -86,5 +119,4 @@ describe("WeeFlowServiceImpl", () => {
     const savedState = service.getPersistence().read(mockFlowconfig.name);
     expect(service.getState()).toEqual(savedState);
   });
-  
 });

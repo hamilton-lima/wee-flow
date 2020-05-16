@@ -34,6 +34,12 @@ export class WeeFlowServiceImpl {
     this.navigator.navigate(this.state.currentRoute);
   }
 
+  restore(config: IWeeFlowConfig) {
+    this.config = this.validate(config);
+    this.state = this.persistence.read(this.config.name);
+    this.navigator.navigate(this.state.currentRoute);
+  }
+
   set(updatedData: any) {
     if (!this.state) {
       console.warn(
