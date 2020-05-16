@@ -1,13 +1,7 @@
-import { Injectable } from "@angular/core";
-import { Product } from "./product-models";
-import { WeeFlowService, IWeeFlowConfig } from "wee-flow";
+import { IWeeFlowConfig } from '../public-api';
 
-@Injectable({
-  providedIn: "root",
-})
-export class CheckoutService {
-  readonly mockFlowconfig: IWeeFlowConfig = {
-    name: "checkout-workflow",
+export const mockFlowconfig: IWeeFlowConfig = {
+    name: "mock-config",
     startRoute: "start",
     currentRoute: null,
     notFoundRoute: "notfound",
@@ -37,26 +31,3 @@ export class CheckoutService {
       },
     ],
   };
-
-  private product: Product;
-  constructor(private flow: WeeFlowService) {}
-
-  start() {
-    this.flow.setConfig(this.mockFlowconfig);
-    this.flow.start();
-  }
-
-  next() {
-    this.flow.next();
-  }
-
-  setProduct(product: Product) {
-    this.product = product;
-    this.flow.set(product);
-    this.flow.next();
-  }
-
-  getProduct(): Product {
-    return this.product;
-  }
-}

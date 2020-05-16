@@ -1,6 +1,5 @@
-import { TestBed } from "@angular/core/testing";
 import { INavigator, WeeFlowServiceImpl } from "./wee-flow.service.impl";
-import { WeeFlowConfig } from './wee-flow.model';
+import { mockFlowconfig } from "./mock";
 
 class CustomRouter implements INavigator {
   lastRoute: string;
@@ -8,37 +7,6 @@ class CustomRouter implements INavigator {
     this.lastRoute = route;
   }
 }
-
-const mockFlowconfig: WeeFlowConfig = {
-  startRoute: "start",
-  currentRoute: null,
-  notFoundRoute: "notfound",
-  routes: [
-    {
-      name: "start",
-      rules: [{ expression: "true", order: 0, route: "choose-product" }],
-    },
-    {
-      name: "choose-product",
-      rules: [
-        { expression: "price > 0", order: 0, route: "price" },
-        { expression: "sizes.length > 0", order: 1, route: "size-details" },
-        { expression: "true", order: 2, route: "checkout" },
-      ],
-    },
-    {
-      name: "price",
-      rules: [
-        { expression: "sizes.length > 0", order: 1, route: "size-details" },
-        { expression: "true", order: 2, route: "checkout" },
-      ],
-    },
-    {
-      name: "size-details",
-      rules: [{ expression: "true", order: 0, route: "checkout" }],
-    },
-  ],
-};
 
 describe("WeeFlowServiceImpl", () => {
 

@@ -1,16 +1,27 @@
-export interface WeeFlowConfig {
+export interface IWeeFlowPersistence {
+  write(state:IWeeflowState);
+  read(name:string):IWeeflowState;
+}
+
+export interface IWeeflowState{
+  config: IWeeFlowConfig;
+  domainData: any;
+}
+
+export interface IWeeFlowConfig {
+  name: string;
   startRoute: string;
   notFoundRoute: string;
   currentRoute: string;
-  routes: WeeFlowRoute[];
+  routes: IWeeFlowRoute[];
 }
 
-export interface WeeFlowRoute {
+export interface IWeeFlowRoute {
   name: string;
-  rules: WeeflowConfigRules[];
+  rules: IWeeflowConfigRules[];
 }
 
-export interface WeeflowConfigRules {
+export interface IWeeflowConfigRules {
   expression: string;
   order: number;
   route: string;

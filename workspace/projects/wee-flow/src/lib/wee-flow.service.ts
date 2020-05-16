@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Router } from "@angular/router";
-import { WeeFlowConfig } from "./wee-flow.model";
+import { IWeeFlowConfig } from "./wee-flow.model";
 import { WeeFlowServiceImpl, INavigator } from "./wee-flow.service.impl";
 
-@Injectable({ providedIn: "root" })
+@Injectable()
 export class WeeFlowService implements INavigator {
   private implementation: WeeFlowServiceImpl;
 
@@ -23,7 +23,7 @@ export class WeeFlowService implements INavigator {
     this.implementation.next();
   }
 
-  setConfig(config: WeeFlowConfig) {
+  setConfig(config: IWeeFlowConfig) {
     this.implementation.setConfig(config);
   }
 
