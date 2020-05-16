@@ -33,19 +33,25 @@ These are the main concepts described in this image:
 # Implementation plan 
 
 ## Phase 1
-ok - first route
-ok - domain data update
-ok - set of rules
-ok - rules parsing
-ok - navigate to the next route 
-- save domain state to continue navigation
-- default route when rules parsing 
-- publish library to npm
+| task | status |
+| --- | --- | 
+| First route | Done | 
+| Domain data update | Done | 
+| Set of rules | Done | 
+| Rules parsing | Done | 
+| Navigate to the next route | Done | 
+| Save domain state to continue navigation
+| Default route when rules parsing 
+| Publish library to npm
 
 ## Phase 2
-- add url guard
-- expose events
-- add error page in the example
+| task | status |
+| --- | --- | 
+| Add url guard |
+| Expose events | 
+| Add error page in the example | 
 
 ## Phase 3
-- create editor
+| task | status |
+| --- | --- | 
+| Create editor | 
