@@ -6,10 +6,10 @@ import { WeeFlowService, IWeeFlowConfig } from "wee-flow";
   providedIn: "root",
 })
 export class CheckoutService {
-  readonly mockFlowconfig: IWeeFlowConfig = {
+  readonly workflowConfig: IWeeFlowConfig = {
     name: "checkout-workflow",
+    version: "1.0.0",
     startRoute: "start",
-    currentRoute: null,
     notFoundRoute: "notfound",
     routes: [
       {
@@ -42,8 +42,11 @@ export class CheckoutService {
   constructor(private flow: WeeFlowService) {}
 
   start() {
-    this.flow.setConfig(this.mockFlowconfig);
-    this.flow.start();
+    this.flow.start(this.workflowConfig);
+  }
+
+  restore(currentRoute: string) {
+    this.flow.restore(currentRoute, this.workflowConfig);
   }
 
   next() {

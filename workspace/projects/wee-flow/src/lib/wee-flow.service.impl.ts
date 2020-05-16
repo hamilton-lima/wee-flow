@@ -34,10 +34,17 @@ export class WeeFlowServiceImpl {
     this.navigator.navigate(this.state.currentRoute);
   }
 
-  restore(config: IWeeFlowConfig) {
+  restore(currenRoute: string, config: IWeeFlowConfig) {
     this.config = this.validate(config);
     this.state = this.persistence.read(this.config.name);
-    this.navigator.navigate(this.state.currentRoute);
+    if (!this.state) {
+      this.start(config);
+    } else {
+      // prevents loop in route guards
+      if (!this.isCurrentRoute(currenRoute)) {
+        this.navigator.navigate(this.state.currentRoute);
+      }
+    }
   }
 
   set(updatedData: any) {
@@ -64,6 +71,10 @@ export class WeeFlowServiceImpl {
     this.persistence.write(this.state);
 
     this.navigator.navigate(this.state.currentRoute);
+  }
+
+  isCurrentRoute(route: string) {
+    return this.state.currentRoute === route;
   }
 
   calculateNextRoute() {

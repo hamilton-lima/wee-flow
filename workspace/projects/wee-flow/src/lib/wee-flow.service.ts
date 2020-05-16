@@ -15,6 +15,10 @@ export class WeeFlowService implements INavigator {
     this.implementation.start(config);
   }
 
+  restore(currentRoute: string, config: IWeeFlowConfig) {
+    this.implementation.restore(currentRoute, config);
+  }
+
   set(updatedData: any) {
     this.implementation.set(updatedData);
   }
@@ -25,5 +29,9 @@ export class WeeFlowService implements INavigator {
 
   navigate(params: string) {
     this.router.navigate([params]);
+  }
+
+  isCurrentRoute(route: string){
+    return this.implementation.isCurrentRoute(route);
   }
 }
