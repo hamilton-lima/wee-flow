@@ -40,18 +40,18 @@ These are the main concepts described in this image:
 | Set of rules | Done | 
 | Rules parsing | Done | 
 | Navigate to the next route | Done | 
-| Save domain state to continue navigation
-| Default route when rules parsing 
+| Save workflow state to continue navigation | Done | 
+| Add url guard to restore state and validate the current page |
+| Add route to be called when no next route is found
 | Publish library to npm
 
 ## Phase 2
 | task | status |
 | --- | --- | 
-| Add url guard |
-| Expose events | 
-| Add error page in the example | 
+| Create editor | 
+| Validate set of rules | 
 
 ## Phase 3
 | task | status |
 | --- | --- | 
-| Create editor | 
+| Expose events | 
