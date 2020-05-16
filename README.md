@@ -42,14 +42,15 @@ These are the main concepts described in this image:
 | Navigate to the next route | Done | 
 | Save workflow state to continue navigation | Done | 
 | Add url guard to restore state and validate the current page | Done |
-| Add route to be called when no next route is found
 | Publish library to npm
 
 ## Phase 2
 | task | status |
 | --- | --- | 
-| Rules definition upgrade should reset saved state? |
 | Create editor | 
+| Rules definition upgrade should reset saved state? |
+| Add route to be called when no next route is found | 
+| Add example where the rules can be manually edited |
 | Validate set of rules | 
 
 ## Phase 3
