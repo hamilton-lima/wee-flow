@@ -41,7 +41,7 @@ These are the main concepts described in this image:
 | Rules parsing | Done | 
 | Navigate to the next route | Done | 
 | Save workflow state to continue navigation | Done | 
-| Add url guard to restore state and validate the current page |
+| Add url guard to restore state and validate the current page | Done |
 | Add route to be called when no next route is found
 | Publish library to npm
 
