@@ -1,24 +1,31 @@
-# WeeFlow
+# wee-flow
+Workflow management for angular applications
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.3.
+## Install 
 
-## Code scaffolding
+```
+ npm install wee-flow ts-expression-evaluator
+```
 
-Run `ng generate component component-name --project wee-flow` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project wee-flow`.
-> Note: Don't forget to add `--project wee-flow` or else it will be added to the default project in your `angular.json` file. 
+# Motivation
 
-## Build
+When you start a new Single page application project everything is beatiful, you are in love with the framework, `ng generate` is you best friend, and so on.
 
-Run `ng build wee-flow` to build the project. The build artifacts will be stored in the `dist/` directory.
+The you you add one component here, another component there, some grams of `this.router.navigate()` and voilá! the magic happens.
 
-## Publishing
+![screenshot](https://raw.githubusercontent.com/hamilton-lima/wee-flow/master/images/first-day.png)
 
-After building your library with `ng build wee-flow`, go to the dist folder `cd dist/wee-flow` and run `npm publish`.
+Then time goes by and the navigation between components starts go get a little, err... challenging... 
 
-## Running unit tests
+![screenshot](https://raw.githubusercontent.com/hamilton-lima/wee-flow/master/images/second-week.png)
 
-Run `ng test wee-flow` to execute the unit tests via [Karma](https://karma-runner.github.io).
+And as time goes by the challenge only grows. This motivated me to build this little flow management to remove the decision of the ***next route*** from the components to the a set of rules.
 
-## Further help
+# How it works 
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+These are the main concepts described in this image:
+- set of rules
+- domain data
+- next route calculation
+
+![screenshot](https://raw.githubusercontent.com/hamilton-lima/wee-flow/master/images/main-flow.png)
