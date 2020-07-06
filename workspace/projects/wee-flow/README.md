@@ -7,6 +7,11 @@ Workflow management for angular applications
  npm install wee-flow ts-expression-evaluator
 ```
 
+## Examples
+
+- Define the flow configuration: https://github.com/hamilton-lima/wee-flow/blob/master/workspace/src/app/checkout.service.ts
+- Route guard using the flow service: https://github.com/hamilton-lima/wee-flow/blob/master/workspace/src/app/checkout-workflow.guard.ts
+
 # Motivation
 
 When you start a new Single page application project everything is beatiful, you are in love with the framework, `ng generate` is you best friend, and so on.

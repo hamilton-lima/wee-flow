@@ -6,6 +6,10 @@ Workflow management for angular applications
 ```
  npm install wee-flow ts-expression-evaluator
 ```
+## Examples
+
+- Define the flow configuration: https://github.com/hamilton-lima/wee-flow/blob/master/workspace/src/app/checkout.service.ts
+- Route guard using the flow service: https://github.com/hamilton-lima/wee-flow/blob/master/workspace/src/app/checkout-workflow.guard.ts
 
 # Motivation
 
