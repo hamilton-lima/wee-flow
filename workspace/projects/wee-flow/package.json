@@ -1,6 +1,11 @@
 {
   "name": "wee-flow",
   "version": "0.0.1",
+  "license": "MIT",
+  "author": {
+    "name": "Hamilton Lima",
+    "url": "https://hamiltonlima.com"
+  },
   "scripts": {
     "ng": "ng",
     "test": "ng test wee-flow",
